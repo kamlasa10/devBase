@@ -1,0 +1,106 @@
+.header__top
+    .logo.header__top-logo
+        +img('logo.svg')
+    .header__top-text Личный кабинет пользователя
+.user-block.header__user-block
+    a(href="#").user-block__write
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.552 0C12.072 0 12.576 0.208797 12.944 0.57836L15.424 3.05887C15.792 3.42843 16 3.92921 16 4.45155C16 4.9739 15.792 5.47467 15.424 5.84424L6.36797 14.8977C5.80797 15.5417 5.016 15.9384 4.104 16H0V15.2001V11.8284C0.072 10.9853 0.463965 10.2006 1.06396 9.67344L10.16 0.579922C10.528 0.208759 11.024 0 11.552 0ZM4.04805 14.4026C4.48005 14.3722 4.87999 14.173 5.19199 13.8082L11.248 7.75923L8.24004 4.75553L2.15996 10.8389C1.83196 11.1253 1.632 11.526 1.6 11.8932V14.4009L4.04805 14.4026ZM9.37598 3.62444L12.376 6.62814L14.288 4.71315C14.36 4.64356 14.4 4.54994 14.4 4.45155C14.4 4.35396 14.36 4.25958 14.288 4.19079L11.808 1.70784C11.744 1.63904 11.648 1.59984 11.552 1.59984C11.456 1.59984 11.36 1.63904 11.288 1.70784L9.37598 3.62444Z" fill="url(#paint0_linear)"/>
+        <defs>
+        <linearGradient id="paint0_linear" x1="-5.96046e-08" y1="16" x2="16.7493" y2="15.1729" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#9242AE"/>
+        <stop offset="1" stop-color="#1976E3"/>
+        </linearGradient>
+        </defs>
+        </svg>
+    .user-block__avatar
+        +img('user-avatar.png')
+    .user-block__notify.js-user-block__notify
+        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9 6.54394C11.9 3.59188 10.332 1.54146 8.309 0.93069C8.232 0.734371 8.113 0.54533 7.959 0.392638C7.42 -0.130879 6.58 -0.130879 6.041 0.392638C5.887 0.54533 5.76801 0.734371 5.69801 0.93069C3.66801 1.54146 2.1 3.58461 2.1 6.54394C2.1 8.45623 1.72899 9.53239 1.04299 10.3104C0.923993 10.4413 0.615962 10.7394 0.398962 10.943C0.300962 11.0375 0.224027 11.1102 0.203027 11.132L0 11.3428V13.8223H4.26298C4.40298 14.6003 4.80902 15.1166 5.53702 15.5746C6.43302 16.1418 7.56698 16.1418 8.46298 15.5746C9.10698 15.1675 9.534 14.5421 9.709 13.8223H14V11.3428L13.797 11.132C13.776 11.1102 13.706 11.0375 13.608 10.9502C13.398 10.7467 13.076 10.4413 12.964 10.3104C12.271 9.52512 11.9 8.44896 11.9 6.54394ZM8.21799 13.8223H5.72604C5.82404 14.0186 5.99197 14.164 6.26497 14.3385C6.71997 14.6221 7.28003 14.6221 7.73503 14.3385C7.93803 14.2004 8.10599 14.0259 8.21799 13.8223ZM11.928 11.292C12.075 11.4592 12.39 11.7645 12.6 11.9609V12.3681H1.4V11.9609C1.61 11.7645 1.92497 11.4592 2.07197 11.292C3.00297 10.2377 3.5 8.81251 3.5 6.54394C3.5 3.79547 5.131 2.18857 7 2.18857C8.862 2.18857 10.5 3.80274 10.5 6.54394C10.5 8.80524 10.997 10.2304 11.928 11.292Z"/>
+        <defs>
+        <linearGradient id="notify-bg" x1="-5.21541e-08" y1="16" x2="14.664" y2="15.3664" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#9242AE"/>
+        <stop offset="1" stop-color="#1976E3"/>
+        </linearGradient>
+        </defs>
+        </svg>
+        .user-block__notify-count 2
+        .notify
+            .notify__title Мои оповещения:
+            .notify__content
+                .notify__item.notify__item--new
+                    .notify__top
+                        .notify__date 02. июня 2020 г.
+                        .notify__time 14:48
+                    .notify__message Вам написал менеджер Валентин. О. П.
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>
+                .notify__item
+                    .notify__top
+                        .notify__date 25. мая 2020 г.
+                        .notify__time 09:00
+                    .notify__message Сегодня Вам нужно внести обязательный ежемесячный платеж в размере 205 777 ₴
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>
+                .notify__item
+                    .notify__top
+                        .notify__date 02. июня 2020 г.
+                        .notify__time 14:48
+                    .notify__message Вам написал менеджер Валентин. О. П.
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>
+                .notify__item
+                    .notify__top
+                        .notify__date 02. июня 2020 г.
+                        .notify__time 14:48
+                    .notify__message Вам написал менеджер Валентин. О. П.
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>
+                .notify__item
+                    .notify__top
+                        .notify__date 02. июня 2020 г.
+                        .notify__time 14:48
+                    .notify__message Вам написал менеджер Валентин. О. П.
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>
+                .notify__item
+                    .notify__top
+                        .notify__date 02. июня 2020 г.
+                        .notify__time 14:48
+                    .notify__message Вам написал менеджер Валентин. О. П.
+                    a(href="#").notify__link
+                        span Посмотреть сообщение
+                        <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M7.92513 5.57425H0V4.42575H7.92513L4.50303 0.811959L5.27431 0L10 5L5.27431 10L4.50303 9.18804L7.92513 5.57425Z" />
+                        </svg>                   
+.user-block__info
+    .user-block__info-name Кузьменко Богдан
+    .user-block__info-date 19 мая 1994 г.
+.navigation.header__navigation
+    include ./menu.pug
+.callback.header__callback
+    a(href="#").callback__number
+        span.callback__number-icon
+            +svg('phone')
+        span.callbak__number-text (044) 228-28-28
+    a(href="#").callback__btn.btn
+        +svg('chat')
+        span.btn__text Написать менеджеру
+
+

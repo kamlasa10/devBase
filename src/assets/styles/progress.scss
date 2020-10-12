@@ -1,0 +1,13 @@
+.progress {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: double 9px transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    &-icon {
+        fill: none;
+    }
+}

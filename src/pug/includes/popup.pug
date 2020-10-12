@@ -1,0 +1,20 @@
+.overlay
+    .popup.popup-services
+        .popup__content
+            .popup__content-top
+                .popup__title Ремонт квартиры
+                button(class="popup__close js-popup__close")
+                    +svg('close')
+            .popup__text Обратный звонок
+            form(class="popup__form" action="#" method="post")
+                .popup__item.popup__item--1
+                    +svg('user')
+                    input(class="popup__input" placeholder="Имя:")
+                .popup__item.popup__item--2
+                    +svg('phone')
+                    input(class="popup__input" placeholder="Имя:")
+                .popup__item.popup__item--bg-none
+                    button(class="btn popup__btn")
+                        span.btn__text Отправить
+                        +svg('send')
+                

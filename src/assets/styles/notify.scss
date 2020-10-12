@@ -1,0 +1,139 @@
+.notify {
+    position: absolute;
+    left: 45px;
+    border-radius: 30px;
+    top:-104px;
+    width: 316px;
+    padding: 22px 20px 0;
+    opacity: 0;
+    background-color: #F7F8FA;
+    transition: all .4s;
+    z-index: -1;
+    display: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 112px;
+        left: -6px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 6px solid #F7F8FA;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -15px;
+        width: 10px;
+        background-color: transparent;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    &__content {
+        height: 570px;
+        padding-right: 10px;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+          }
+          
+          /* Track */
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background: rgba(131, 149, 195, 0.25);
+            border-radius: 30px;
+          }
+          
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: lighten(rgba(131, 149, 195, 0.25), 10%);
+          }
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        color: rgba($text, 50%);
+        padding: 12px 20px;
+        width: 100%;
+        transition: all .5s ease-in;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 25px;
+
+        &--new {
+            color: #fff;
+            background: $violetGradient;
+
+            &:hover {
+                background: linear-gradient(87.17deg, #1976E3 0%, #9242AE 100%);
+            }
+
+            .notify__link {
+                span {
+                    border-color: #fff;
+                }
+
+                svg {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    &__top {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__date,
+    &__time {
+        font-size: 10px;
+        line-height: 1em;
+    }
+
+    &__message {
+        margin-bottom: 7px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            svg {
+                transform: translateX(-5px);
+            }
+        }
+
+        span {
+            border-bottom: 1px solid rgba($text, 50%);
+        }
+
+        svg {
+            transition: all .4s;
+            width: 11px;
+            height: 11px;
+            fill: rgba($text, 50%);
+            margin-left: 10px;
+        }
+    }
+}

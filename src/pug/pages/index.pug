@@ -1,0 +1,532 @@
+
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Личный кабинет пользователя'
+		var id_page = 'user-page'
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+block content
+	main.content
+		.container
+			.inner-wrap
+				.tabs.paymants
+					.tabs__wrap
+						.tabs__title Мои платежи
+						a(href="#" data-paymants="1").tabs__tab.js-tabs__tab Philadelphia, квартира 2А
+						a(href="#" data-paymants="2").tabs__tab.js-tabs__tab Philadelphia, паркомісце 263
+						a(href="#" data-paymants="3").tabs__tab.js-tabs__tab Philadelphia, паркомісце 264
+						a(href="#" data-paymants="4").tabs__tab.js-tabs__tab Philadelphia, комора 4
+				.paymants__content
+					.paymants__wrap
+						.paymants__left
+							.progress
+								<svg viewBox="0 0 120 120" class="progress-icon">
+									<circle cx="60" cy="60" r="60"/>
+								</svg>
+								.progress__content
+									span 50%
+									.progress__text Выплачено
+						.paymants__right
+							.paymants__item
+								.paymants__top
+									.paymants__top-title Общая информация
+								.paymants__list
+									.paymants__block
+										.paymants__block-title Общее кол-во платежей:
+										.paymants__block-value 30 / 60
+									.paymants__block
+										.paymants__block-title Выплачено грн:
+										.paymants__block-value 19 234 662 ₴ / 29 469 324 ₴
+										.paymants__block-text 40 000$ / 80 000$
+									.paymants__block
+										.paymants__block-title Сумма ежемес. платежа:
+										.paymants__block-value 205 777 ₴
+										.paymants__block-text 6. 500$
+							.paymants__item
+								.paymants__top
+									.paymants__top-title Следующий платеж
+									.paymants__top-value Id: 7584039
+								.paymants__list
+									.paymants__block
+										.paymants__block-title Дата:
+										.paymants__block-value 25 Июля 2020 г.
+									.paymants__block
+										.paymants__block-title Сумма:
+										.paymants__block-value 205 777 ₴ (6 500 $)
+									.paymants__block
+										a(href="#").paymants__pay.btn
+											span.btn__text Оплатить картой
+											+svg('pay')
+									.paymants__wrap
+										.paymants__link.paymants__link--1
+											span Скачать счет
+											+svg('short-arrow')
+										.paymants__link 
+											span Погасить досрочно
+											+svg('short-arrow')
+					.paymants__bottom
+						.history
+							.history__pays-wrap
+								.history__title.tabs__title История платежей:
+								.history__status
+									.history__status-item.history__status--done
+										.history__status-text Выполненный
+									.history__status-item.history__status--current
+										.history__status-text Текущий	
+									.history__status-item.history__status--future
+										.history__status-text Будущий	
+									.history__status-item.history__status--fail
+										.history__status-text Просроченный
+						.history__content
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+								.history__info.history__info--success.history__info.history__info--success--10
+									.history__info-wrap
+										.history__info-left
+											.progress-circle.over50.p50
+												.progress-circle__content
+													span 19/60
+													.progress-circle__text платеж
+												.left-half-clipper
+													.first50-bar
+													.value-bar
+										.history__info-right
+											.history__info-top
+												.history__info-status Выполненный
+												.history__info-value Id: 7584039
+											.history__info-list
+												.paymants__block
+													.paymants__block-title Дата:
+													.paymants__block-value 25 Июля 2020 г.
+												.paymants__block
+													.paymants__block-title Сумма:
+													.paymants__block-value 205 777 ₴ (6 500 $)
+											.history__bottom
+												a(href="#").history__btn.btn
+													span.btn__text Скачать акт платежа 
+													+svg('short-arrow')
+							.history__item.history__item--current
+								.history__info.history__info--current
+									.history__info-wrap
+										.history__info-left
+											.progress-circle.over50.p50
+												.progress-circle__content
+													span 3/60
+													.progress-circle__text платеж
+												.left-half-clipper
+													.first50-bar
+													.value-bar
+										.history__info-right
+											.history__info-top
+												.history__info-status Текущий
+												.history__info-value Id: 7584039
+											.history__info-list
+												.paymants__block
+													.paymants__block-title Дата:
+													.paymants__block-value 25 Июля 2020 г.
+												.paymants__block
+													.paymants__block-title Сумма:
+													.paymants__block-value 205 777 ₴ (6 500 $)
+									.history__bottom
+										.history__bottom-left
+											.history__icon
+												+svg('short-arrow')
+											a(href="#").history__bottom-link Скачать счет
+										a(href="#").history__btn.btn
+											span.btn__text Оплатить картой
+											+svg('pay')
+							.history__item.history__item--fail
+								.history__info.history__info--fail
+									.history__info-wrap
+										.history__info-left
+											.progress-circle.over50.p50
+												.progress-circle__content
+													span 19/60
+													.progress-circle__text платеж
+												.left-half-clipper
+													.first50-bar
+													.value-bar
+										.history__info-right
+											.history__info-top
+												.history__info-status Просроченный
+												.history__info-value Id: 7584039
+											.history__info-list
+												.paymants__block
+													.paymants__block-title Дата:
+													.paymants__block-value 25 Июля 2020 г.
+												.paymants__block
+													.paymants__block-title Сумма:
+													.paymants__block-value 205 777 ₴ (6 500 $)
+									.history__bottom
+										.history__bottom-left
+											.history__icon
+												+svg('short-arrow')
+											a(href="#").history__bottom-link Скачать счет
+										a(href="#").history__btn.btn
+											span.btn__text Оплатить картой
+											+svg('pay')
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--success
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+							.history__item.history__item--future
+			<svg viewBox="0 0 120 120" class="svg-progress">
+				<circle cx="60" cy="60" r="60"/>
+			</svg>
+			.inner-wrap.immovables
+				.tabs.paymants
+					.tabs__wrap
+						.tabs__title Моя недвижимость
+						a(href="#" data-immovables="1").tabs__tab.tabs__tab-immovables.js-tabs__tab-immovables Philadelphia, квартира 2А
+						a(href="#" data-immovables="2").tabs__tab.tabs__tab-immovables.js-tabs__tab-immovables Philadelphia, паркомісце 263
+						a(href="#" data-immovables="3").tabs__tab.tabs__tab-immovables.js-tabs__tab-immovables Philadelphia, паркомісце 264
+						a(href="#" data-immovables="4").tabs__tab.tabs__tab-immovables.js-tabs__tab-immovables Philadelphia, комора 4
+				.immovables__content
+					.immovables__left
+						.immovables__left-img
+							+img('immovables-img.png')
+						.immovables__left-wrap
+							.immovables__left-item.immovables__left-item--1
+								.immovables__left-title План этажа
+								.immovables__left-item-img
+									+img('immovables-img-plan.svg')
+							.immovables__left-item.immovables__left-item--2
+								.immovables__left-title Квартира 2А
+								.immovables__left-item-img
+									+img('img.png')
+								.immovables__left-item-wrap
+									.immovables__left-item-img-small
+										+img('img.png')
+									.immovables__left-item-img-small
+										+img('immovables-img-desc.png')
+					.immovables__info
+						.immovables__info-title Philadelphia concept house
+						.immovables__info-list
+							.immovables__info-list-text Дом: 1
+							.immovables__info-list-text Секция: 2
+							.immovables__info-list-text Этаж: 5
+							.immovables__info-list-text Квартира: 2А
+							.immovables__info-list-text Комнатность: 2
+						.immovables__info-bottom
+							.immovables__info-popup
+								.immovables__info-popup-title *Планируема выгода:
+								.immovables__info-popup-desc Aliquip eiusmod ut reprehenderit ullamco labore tempor ex cupidatat dolore Lorem. Ea velit id ad dolore labore et anim proident ut culpa. Enim voluptate fugiat sint tempor duis minim sint mollit ut non elit ut. Sit nulla minim nisi do culpa ullamco esse. Cillum aliquip exercitation in officia.
+								.immovables__info-popup-desc Velit sint qui aute sunt ex occaecat esse laborum. Eu deserunt sit tempor in incididunt incididunt ut quis excepteur sint consequat sint eu. Et adipisicing in sunt do amet enim sit.
+							.immovables__info-bottom-wrap
+								.immovables__info-bottom-title Планируемая выгода:
+								.immovables__info-bottom-benefit 16%
+							.immovables__info-bottom-text Стоимость:<br> 29 469 324 ₴ (+16%)
+							.immovables__info-bottom-desc На момент финала строительства ваша недвижимость выросла в цене на 16%*
+							.immovables__info-bottom-desc.immovables__info-bottom-desc--hide Потенциальный заработок на момент финала строительства*
+					.immovables__details
+						.immovables__details-content
+							.immovables__details-block
+								.immovables__details-wrap
+									.immovables__details-left--change Общая площадь: 
+									.immovables__details-right--change 84.15 м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left--change Жилая площадь:
+									.immovables__details-right--change 63.31 м<sup>2</sup>
+							.immovables__details-block
+								.immovables__details-wrap
+									.immovables__details-left Этаж: 
+									.immovables__details-right 5
+								.immovables__details-wrap
+									.immovables__details-left Санузел:
+									.immovables__details-right 3.23м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Прихожая:
+									.immovables__details-right 10.24<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Спальня:
+									.immovables__details-right 10.03м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Ванна:
+									.immovables__details-right 4.69м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Кухня:
+									.immovables__details-right 17.7м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Лоджия:
+									.immovables__details-right 1.41м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Гостиная:
+									.immovables__details-right 23.75м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Прихожая:
+									.immovables__details-right 10.24м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Спальня:
+									.immovables__details-right 10.03м<sup>2</sup>
+								.immovables__details-wrap
+									.immovables__details-left Ванна:
+									.immovables__details-right 4.69м<sup>2</sup>
+						.immovables__details-bottom
+							.immovables__details-bottom-wrap
+								.immovables__details-bottom-item.immovables__details-bottom-item--1
+									+svg('philadelphia')
+								.immovables__details-bottom-item.immovables__details-bottom-item--2
+									+svg('saga-logo')
+								.immovables__details-bottom-item.immovables__details-bottom-item--3
+									.immovables__details-bottom-icon
+										a(href="#")
+											+svg('pdf')
+									a(href="#" download).immovables__details-bottom-link Скачать PDF
+								.immovables__details-bottom-item.immovables__details-bottom-item--4
+									+svg('compass')
+			.services
+				.services__left
+					.services__title Услуги
+					.services__list
+						.services__list-title Популярные услуги:
+						.services__list-content.services__list-population
+							.services__list-item.js-services__list-item.services__list-item--1
+								.services__list-icon
+									+svg('services-icon')
+								.services__list-text Ремонт квартиры
+							.services__list-item.js-services__list-item.services__list-item--2
+								.services__list-icon
+									+svg('services-icon2')
+								.services__list-text Датчики затопления
+							.services__list-item.js-services__list-item.services__list-item--3
+								.services__list-icon
+									+svg('services-icon3')
+								.services__list-text Електрик
+							.services__list-item.js-services__list-item.services__list-item--4
+								.services__list-icon
+									+svg('services-icon4')
+								.services__list-text Регулярная уборка
+							.services__list-item.js-services__list-item.services__list-item--5
+								.services__list-icon
+									+svg('services-icon5')
+								.services__list-text Установка домофона
+							.services__list-item.js-services__list-item.services__list-item--1
+								.services__list-icon
+									+svg('services-icon6')
+								.services__list-text Доставка воды
+					.services__list
+						.services__list-title Другие услуги:
+						.services__list-content
+							.services__list-item.js-services__list-item.services__list-item--1
+								.services__list-icon
+									+svg('plumber')
+								.services__list-text Сантехник
+							.services__list-item.js-services__list-item.services__list-item--2
+								.services__list-icon
+									+svg('statement')
+								.services__list-text Получение финансовой справки
+							.services__list-item.js-services__list-item.services__list-item--3
+								.services__list-icon
+									+svg('cards')
+								.services__list-text Карточки доступа
+							.services__list-item.js-services__list-item.services__list-item--4
+								.services__list-icon
+									+svg('waste')
+								.services__list-text Вывоз строительного мусора
+							.services__list-item.js-services__list-item.services__list-item--5
+								.services__list-icon
+									+svg('courier')
+								.services__list-text Курьер
+							.services__list-item.js-services__list-item.services__list-item--6
+								.services__list-icon
+									+svg('clean')
+								.services__list-text Очистка канализации
+							.services__list-item.js-services__list-item.services__list-item--7
+								.services__list-icon
+									+svg('rescheduling')
+								.services__list-text Перепланирование
+							.services__list-item.js-services__list-item.services__list-item--8
+								.services__list-icon
+									+svg('moving')
+								.services__list-text Переезд
+							.services__list-item.js-services__list-item.services__list-item--9
+								.services__list-icon
+									+svg('furniture')
+								.services__list-text Химчистка мебели
+							.services__list-item.js-services__list-item.services__list-item--10
+								.services__list-icon
+									+svg('carpets')
+								.services__list-text Химчистка ковров
+							.services__list-item.js-services__list-item.services__list-item--11
+								.services__list-icon
+									+svg('clothes')
+								.services__list-text Химчистка одежды
+							.services__list-item.js-services__list-item.services__list-item--12
+								.services__list-icon
+									+svg('application')
+								.services__list-text Заявка менеджеру
+							.services__list-item.js-services__list-item.services__list-item--13
+								.services__list-icon
+									+svg('rent')
+								.services__list-text Аренда квартиры
+							.services__list-item.js-services__list-item.services__list-item--14
+								.services__list-icon
+									+svg('sell')
+								.services__list-text Продажа квартиры
+				.services__right
+					.services__right-top
+						.services__title Сдача комплекса
+						.services__info
+							.services__info-progress
+								input(class="services__info-range js-services__info-range" name="my_range")
+							.services__info-wrap
+								.services__info-item
+									.services__info-item-content
+										.services__info-title Налало строительтва:
+										.services__info-text II квартал 2018 г.
+								.services__info-item
+									.services__info-item-content
+										.services__info-title Конец строительтва:
+										.services__info-text IV квартал 2022 г.
+					.services__right-bottom
+						.services__title Документация
+						.services__doc
+							.services__doc-item
+								+img('doc-img.png')
+								a(href="#" class="services__doc-link" download)
+									span Дозвіл на виконання будівельних робіт
+							.services__doc-item
+								+img('doc-img2.png')
+								a(href="#" class="services__doc-link" download)
+									span Ліцензія
+							.services__doc-item
+								+img('doc-img3.png')
+								a(href="#" class="services__doc-link" download)
+									span Перелік видів робіт
+							.services__doc-item
+								+img('doc-img4.png')
+								a(href="#" class="services__doc-link" download)
+									span Експертний звіт щодо розгляду проєктної документації за проєктом
+							.services__doc-item
+								+img('doc-img4.png')
+								a(href="#" class="services__doc-link" download)
+									span Експертний звіт щодо розгляду проєктної документації за проєктом
+							.services__doc-item
+								+img('doc-img4.png')
+								a(href="#" class="services__doc-link" download)
+									span Експертний звіт щодо розгляду проєктної документації за проєктом
+			.inner-wrap.date-section
+				form(method="post" action="#").date.js-date
+					.date__title Личные данные
+					.date__content
+						.date__content-top
+							.date__content-item
+								.date__content-title ФИО:
+								.date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Ваша Фамилия" name="lastName")
+								.date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Ваше Имя" name="firstName")
+								.date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Ваше Отчество" name="patronymic")
+							.date__content-item
+								.date__content-title Смена пароля:
+								.date__content-block
+									input(class="date__content-input" type="password" data-input="input" placeholder="Старый пароль" name="oldPassword")
+								.date__content-block
+									input(class="date__content-input" type="password" data-input="input" placeholder="Новый пароль" name="newPassword")
+								.date__content-block
+									input(class="date__content-input" type="password" data-input="input" placeholder="Повторите новый пароль" name="repeatedNewPassword")
+							.date__content-item
+								.date__content-title Личные данные:
+								.date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Ваша дата рождения" name="birthday")
+								.date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Телефон" name="phone")
+							.date__content-item
+								.date__content-title Паспортные данные:
+								.date__content-block
+									div.date__content-text
+										+svg('file')
+										span Паспорт прикреплен
+									label.date__content-label
+										input(type="file" data-file="true" multiple="multiple")
+										span Загрузить новый скан
+										+svg('short-arrow')
+								.date__content-block
+									.date__content-block-wrap
+						.date__content-bottom
+							.date__content-item
+								.date__content-title Наличие супруги:
+								.date__content-bottom-wrap
+									.date__content-bottom-block
+										label.custom-checkbox-text
+											input(type="radio" name="spouse" data-radio="spouse" value="yes" class="custom-checkbox-input")
+											span.custom-checkbox-indicator
+										.date__content-bottom-block-text Да
+									
+									.date__content-bottom-block
+										label.custom-checkbox-text
+											input(type="radio" checked value="no" data-radio="spouse" name="spouse" class="custom-checkbox-input")
+											span.custom-checkbox-indicator
+										.date__content-bottom-block-text нет
+								div(data-content="spouse").date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Имя Вашей супруги" name="lastName")
+								div(data-content="spouse").date__content-block
+									input(class="date__content-input" type="text" data-input="input" placeholder="Возраст Вашей супруги" name="firstName")
+							.date__content-item
+								.date__content-title Наличие детей:
+								.date__content-bottom-wrap
+									.date__content-bottom-block
+										label.custom-checkbox-text
+											input(type="radio" name="maried" data-radio="maried" value="yes" class="custom-checkbox-input")
+											span.custom-checkbox-indicator
+										.date__content-bottom-block-text Да
+									.date__content-bottom-block
+										label.custom-checkbox-text
+											input(type="radio" name="maried" data-radio="maried" checked value="no" class="custom-checkbox-input")
+											span.custom-checkbox-indicator
+										.date__content-bottom-block-text Нет
+								div(data-content="maried").date__content-bottom-container
+									.date__content-bottom-item
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваша Фамилия" name="lastName")
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваше Имя" name="firstName")
+									.date__content-bottom-item
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваша Фамилия" name="lastName")
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваше Имя" name="firstName")
+									.date__content-bottom-item
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваша Фамилия" name="lastName")
+										.date__content-block
+											input(class="date__content-input" type="text" data-input="input" placeholder="Ваше Имя" name="firstName")
+									button(type="button" class="date__content-add js-date__btn") 
+										span Добавить ребенка
+						.date__send
+							button(type="submit").date__btn.btn
+								span.btn__text Сохранить
+								+svg('save')
+block footer
+	include ../includes/footer.pug
+
+block header
+	.header
+		include ../includes/header.pug
